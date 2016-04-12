@@ -113,14 +113,12 @@ class Keywords(object):
                     self.keywords[word] += 1
 
 
-    def top_keywords(self, count):
+    def top_keywords(self):
         """
-        Params: 
-            count (int): Number of top keywords to return
 
         Returns: self.keywords dict sorted by value in reverse order and sliced by count
         """
-        return sorted(self.keywords.items(), key=operator.itemgetter(1), reverse=True)[:count]
+        return sorted(self.keywords.items(), key=operator.itemgetter(1), reverse=True)
 
 
 if __name__ == "__main__":
@@ -146,12 +144,16 @@ if __name__ == "__main__":
 
     print ">>> How many top keywords would you like to see? Type 'quit' to quit at any time:"
     num = raw_input()
+
+    print ">>> Sorting keywords..."
+    keywords = k.top_keywords()
+
     while num != "quit":
         try: 
-            print ">>> Sorting keywords..."
-            keywords = k.top_keywords(int(num))
-            for w, c in keywords:
-                print w, "(" + c + ")"
+            num = int(num)
+
+            for w, c in keywords[:num]:
+                print w, "(" + str(c) + ")"
 
             print ">>> "
             num = raw_input()
