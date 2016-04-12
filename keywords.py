@@ -161,19 +161,3 @@ if __name__ == "__main__":
             num = raw_input()
 
 
-# Decisions
-
-# Narrow by category to begin with
-# Add to keywords as I go or get all data first?
-# Assume everything is in English and I don't have to deal with real Unicode
-
-# Next Steps
-
-# Real webapp with real dropdowns and no typing for the user :D
-# Better error handling, UX for exceptions
-# Option to query by location -- I started doing this but locations list was too long for a console UI
-# Cache results nightly instead of fetching live! I would write a script for this, run API queries in blocks, etc etc...
-# Better language processing: Group words and their derivatives together, multi-word keywords e.g. "dynamic programming"
-# Category specific word exclusions, e.g. can filter "engineers" out of Engineering category
-# Handle real unicode...
-
