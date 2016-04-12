@@ -30,13 +30,13 @@ class Keywords(object):
         # beautifulsoup uses unicode, which makes stripping out unwanted punctuation difficult. 
         # Since everything's in English (for now), convert back to ascii. 
         if type(soup) != str:
-            soup = unicodedata.normalize("NFKD", soup).encode("ascii","ignore")
+            soup = unicodedata.normalize("NFKD", soup).encode("ascii", "ignore")
 
         punctuation = exclusions.punctuation
         soup = soup.translate(None, punctuation)
 
-        # Special case for '/'
-        soup = soup.replace('/', ' ')
+        # Special case for "/"
+        soup = soup.replace("/", " ")
 
         soup = soup.split()
 
